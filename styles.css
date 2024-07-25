@@ -25,8 +25,10 @@ body{
     border-radius: 10px;
     border: 1px solid rgb(255, 0, 238) 6.9%;
     max-width: 460px;
+    height: 530px;
     margin: 0 auto;
-    overflow: auto;
+    overflow: hidden;
+    
 }
 
 .converter h1 {

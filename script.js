@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 selected.textContent = item.textContent;
                 items.classList.add(selectHideClass);
                 const selectedValue = item.textContent.includes(' - ') ? item.textContent.split(' - ')[0] : item.textContent;
-                console.log('Selected value:', selectedValue);
                 selected.dataset.value = selectedValue; 
             });
         });
@@ -69,19 +68,19 @@ async function convertCurrency() {
 
         switch (outputFormat.toLowerCase()) {
             case 'crores':
-                formattedAmount = (convertedAmount / 10000000).toFixed(2) + ' Crores ' + toCurrency;
+                formattedAmount = accounting.formatNumber((convertedAmount / 10000000),2) + ' Crores ' + toCurrency;
                 break;
             case 'millions':
-                formattedAmount = (convertedAmount / 1000000).toFixed(2) + ' Million ' + toCurrency;
+                formattedAmount = accounting.formatNumber((convertedAmount / 1000000),2) + ' Million ' + toCurrency;
                 break;
             case 'billions':
-                formattedAmount = (convertedAmount / 1000000000).toFixed(2) + ' Billion ' + toCurrency;
+                formattedAmount = accounting.formatNumber((convertedAmount / 1000000000),2) + ' Billion ' + toCurrency;
                 break;
             case 'lakhs':
-                formattedAmount = (convertedAmount / 100000).toFixed(2) + ' Lakhs ' + toCurrency;
+                formattedAmount = accounting.formatNumber((convertedAmount / 100000),2) + ' Lakhs ' + toCurrency;
                 break;
             default:
-                formattedAmount = convertedAmount.toFixed(2) + ' ' + toCurrency;
+                formattedAmount = accounting.formatNumber(convertedAmount,2) + ' ' + toCurrency;
         }
 
         result.innerText = formattedAmount;

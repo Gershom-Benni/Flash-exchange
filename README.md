@@ -2,7 +2,7 @@
 
 ## Description
 
-Flash Exchange is a simple and intuitive currency converter web application. It allows users to convert amounts between different currencies and format the result according to various output formats such as Standard, Millions, Billions, Crores, and Lakhs.
+Flash Exchange is a simple and visually appealing currency converter web application. It allows users to convert amounts between different currencies and format the result according to various output formats such as Standard, Millions, Billions, Crores, and Lakhs.
 
 ## Features
 

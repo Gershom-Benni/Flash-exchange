@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/money.js/0.2.0/money.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="images/currency-exchange-svgrepo-com.svg" type="image/x-icon">
+</head>
+<body>
+        <div class="converter">
+            <h1>Currency Converter</h1>
+            <div class="input">
+                <input id="amount" type="number" placeholder="Enter amount">
+                <div class="custom-select">
+                    <div class="select-selected">Currency</div>
+                    <div class="select-items select-hide">
+                        <div>AED</div>
+                            <div>ARS</div>
+                            <div>AUD</div>
+                            <div>BDT</div>
+                            <div>BGN</div>
+                            <div>CAD</div>
+                            <div>CHF</div>
+                            <div>CLP</div>
+                            <div>CNY</div>
+                            <div>COP</div>
+                            <div>CZK</div>
+                            <div>DKK</div>
+                            <div>EUR</div>
+                            <div>GBP</div>
+                            <div>GHS</div>
+                            <div>HKD</div>
+                            <div>HUF</div>
+                            <div>IDR</div>
+                            <div>ILS</div>
+                            <div>INR</div>
+                            <div>JOD</div>
+                            <div>JPY</div>
+                            <div>KWD</div>
+                            <div>KHR</div>
+                            <div>KRW</div>
+                            <div>MXN</div>
+                            <div>MNT</div>
+                            <div>MYR</div>
+                            <div>NOK</div>
+                            <div>NZD</div>
+                            <div>PHP</div>
+                            <div>PKR</div>
+                            <div>PLN</div>
+                            <div>PEN</div>
+                            <div>QAR</div>
+                            <div>RON</div>
+                            <div>RUB</div>
+                            <div>SEK</div>
+                            <div>SGD</div>
+                            <div>THB</div>
+                            <div>TRY</div>
+                            <div>USD</div>
+                            <div>ZAR</div>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="input2">
+               <p class="to">To :</p>
+                <div class="custom-select2">
+                    <div class="select-selected2">Currency</div>
+                    <div class="select-items2 select-hide2">
+                        <div>AED - United Arab Emirates Dirham</div>
+                        <div>ARS - Argentine Peso</div>
+                        <div>AUD - Australian Dollar</div>
+                        <div>BDT - Bangladeshi Taka</div>
+                        <div>BGN - Bulgarian Lev</div>
+                        <div>CAD - Canadian Dollar</div>
+                        <div>CHF - Swiss Franc</div>
+                        <div>CLP - Chilean Peso</div>
+                        <div>CNY - Chinese Yuan</div>
+                        <div>COP - Colombian Peso</div>
+                        <div>CZK - Czech Koruna</div>
+                        <div>DKK - Danish Krone</div>
+                        <div>EUR - Euro</div>
+                        <div>GBP - British Pound Sterling</div>
+                        <div>GHS - Ghanaian Cedi</div>
+                        <div>HKD - Hong Kong Dollar</div>
+                        <div>HUF - Hungarian Forint</div>
+                        <div>IDR - Indonesian Rupiah</div>
+                        <div>ILS - Israeli New Shekel</div>
+                        <div>INR - Indian Rupee</div>
+                        <div>JOD - Jordanian Dinar</div>
+                        <div>JPY - Japanese Yen</div>
+                        <div>KHR - Cambodian Riel</div>
+                        <div>KRW - South Korean Won</div>
+                        <div>KWD - Kuwaiti Dinar</div>
+                        <div>MXN - Mexican Peso</div>
+                        <div>MNT - Mongolian Tugrik</div>
+                        <div>MYR - Malaysian Ringgit</div>
+                        <div>NOK - Norwegian Krone</div>
+                        <div>NZD - New Zealand Dollar</div>
+                        <div>PEN - Peruvian Nuevo Sol</div>
+                        <div>PHP - Philippine Peso</div>
+                        <div>PKR - Pakistani Rupee</div>
+                        <div>PLN - Polish Zloty</div>
+                        <div>QAR - Qatari Riyal</div>
+                        <div>RON - Romanian Leu</div>
+                        <div>RUB - Russian Ruble</div>
+                        <div>SEK - Swedish Krona</div>
+                        <div>SGD - Singapore Dollar</div>
+                        <div>THB - Thai Baht</div>
+                        <div>TRY - Turkish Lira</div>
+                        <div>USD - US Dollar</div>
+                        <div>ZAR - South African Rand</div>
+                        
+    
+                    </div>
+                </div>
+            </div>
+           <div class="input3">
+            <div class="custom-select3">
+                <div class="select-selected3">Output Format</div>
+                <div class="select-items3 select-hide3">
+                    <div>Standard</div>
+                    <div>Billions</div>
+                    <div>Millions</div>
+                    <div>Crores</div>
+                    <div>Lakhs</div>
+                </div>
+            </div>
+           </div>
+    
+            
+            <button onclick="convertCurrency()" id="btn">Convert</button>
+            <div class="loader"></div>
+            <div id="result"></div>
+        </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Flash Exchange. All rights reserved.</p>
+            <p>
+                <a href="mailto:flashexchange.sip986@passinbox.com">Contact Us</a> | 
+                <a href="Additional Files/privacy_policy.html">Privacy Policy</a> | 
+                <a href="Additional Files/term_of_service.html">Terms of Service</a>
+            </p>
+            <p>Follow us on 
+                <a href=" https://github.com/Gershom-Benni" target="_blank">Github</a>, 
+                <a href="https://in.linkedin.com/in/gershom-benni-108530285" target="_blank">LinkedIn</a>, and 
+                <a href="https://instagram.com/gershom_benni" target="_blank">Instagram</a>.
+            </p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

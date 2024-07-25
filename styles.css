@@ -27,7 +27,7 @@ body{
     max-width: 460px;
     height: 530px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: auto;
     
 }
 

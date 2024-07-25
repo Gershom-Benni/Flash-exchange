@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+body{
+    background: rgb(0,131,83);
+    background: radial-gradient(circle, rgba(0,131,83,1) 0%, rgba(0,66,42,1) 100%);
+    text-align: center;
+    color: white;
+    font-family: Poppins;
+}
+h1{
+    font-family: "Luxurious Script", cursive;
+    font-size: 80px;
+    color: goldenrod;
+    letter-spacing: 15px;
+}
+h2{
+    color: goldenrod;
+    font-family: "Italianno", cursive;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+p{
+    font-family: Poppins;
+    font-size: 25px;
+}
+a{
+    color: yellow;
+}

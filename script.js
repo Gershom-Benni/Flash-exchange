@@ -20,15 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 selected.textContent = item.textContent;
                 items.classList.add(selectHideClass);
                 const selectedValue = item.textContent.includes(' - ') ? item.textContent.split(' - ')[0] : item.textContent;
+                console.log('Selected value:', selectedValue);
                 selected.dataset.value = selectedValue; 
             });
         });
+
         document.addEventListener('click', (event) => {
             if (!select.contains(event.target)) {
                 items.classList.add(selectHideClass);
             }
         });
     }
+
     setupDropdown('.custom-select', '.select-selected', '.select-items', 'select-hide');
     setupDropdown('.custom-select2', '.select-selected2', '.select-items2', 'select-hide2');
     setupDropdown('.custom-select3', '.select-selected3', '.select-items3', 'select-hide3');
@@ -51,13 +54,10 @@ async function convertCurrency() {
     loader.style.display = 'block';
     result.style.display = 'none';
 
-    const minLoadingTime = 1000; 
-    const startTime = Date.now();
+    const apiKey = '4d7ffa823f0f4cdca54dcc37e66a66ee'; 
+    const url = `https://openexchangerates.org/api/latest.json?app_id=${apiKey}`;
 
     try {
-        const apiKey = '4d7ffa823f0f4cdca54dcc37e66a66ee';
-        const url = `https://openexchangerates.org/api/latest.json?app_id=${apiKey}`;
-
         const response = await fetch(url);
         const data = await response.json();
 
@@ -86,16 +86,10 @@ async function convertCurrency() {
 
         result.innerText = formattedAmount;
         result.style.display = 'block'; 
-
     } catch (error) {
         console.error('Error fetching conversion rate:', error);
         alert('Failed to convert currency.');
     } finally {
-        const elapsedTime = Date.now() - startTime;
-        const remainingTime = Math.max(minLoadingTime - elapsedTime, 0);
-
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, remainingTime);
+        loader.style.display = 'none';
     }
 }
